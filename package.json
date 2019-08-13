@@ -19,6 +19,8 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-bigint": "^7.4.4",
+    "babel-preset-gatsby": "^0.2.8",
     "prettier": "^1.18.2"
   },
   "keywords": [

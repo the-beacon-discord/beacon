@@ -20,15 +20,15 @@ const IndexPage = () => (
         },
         {
           image: two,
-          amount: 0.1
+          amount: 0.2
         },
         {
           image: three,
-          amount: -0.1
+          amount: -0.2
         },
         {
           image: four,
-          amount: -0.15
+          amount: -0.4
         },
         {
           children: <h1 style={{marginTop: '3em', color: '#fff'}}>The Beacon</h1>,

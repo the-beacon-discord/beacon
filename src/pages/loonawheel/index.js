@@ -42,6 +42,10 @@ class SecondPage extends Component {
       spinning: false,
       message: 'Will Chuu come and kill you with a heart attack?'
     }
+    this.timeout = null;
+  }
+  componentWillUnmount() {
+    if (this.timeout) clearTimeout(this.timeout)
   }
   spin() {
     this.setState({
@@ -53,7 +57,7 @@ class SecondPage extends Component {
     this.wheel.current.style.transition = `transform ${timeToRotate}s cubic-bezier(.35,1,1,1)`;
     this.wheel.current.style.transform = `rotate(${toRotate}deg)`;
     
-    setTimeout(() => {
+    this.timeout = setTimeout(() => {
       this.rotation = toRotate % 360;
       this.wheel.current.style.transition = 'unset';
       this.wheel.current.style.transform = `rotate(${this.rotation}deg)`;

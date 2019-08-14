@@ -5,9 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { useStaticQuery, graphql } from 'gatsby'
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 import Header from "./header"
 import "./layout.css"
@@ -24,7 +25,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <ParallaxProvider>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
@@ -40,7 +41,7 @@ const Layout = ({ children }) => {
           <a href="https://github.com/7coil/beacon">here</a>
         </footer>
       </div>
-    </>
+    </ParallaxProvider>
   )
 }
 

@@ -16,7 +16,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-scroll-parallax": "^2.1.2"
   },
   "devDependencies": {
     "@babel/plugin-syntax-bigint": "^7.4.4",

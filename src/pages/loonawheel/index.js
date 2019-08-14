@@ -1,10 +1,8 @@
 /* global BigInt */
 
-import { Link } from 'gatsby';
 import React, { Component } from 'react';
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
-
 import stanOrDie from './stan-or-die.png';
 
 const aliveMessages = [
@@ -89,6 +87,7 @@ class SecondPage extends Component {
         <img
           src={stanOrDie}
           ref={this.wheel}
+          alt="A wheel with a horizontal split. The top half contains 'STAN' and the bottom half contains 'DIE'. This wheel rotates."
           style={{
             width: '300px',
             backgroundColor: 'transparent'

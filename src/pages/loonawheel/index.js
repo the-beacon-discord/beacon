@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
 import stanOrDie from './stan-or-die.png';
+import pointer from './pointer.png';
 
 const aliveMessages = [
   'Go Won and her butterflies shuttle you away safely.',
@@ -18,8 +19,9 @@ const aliveMessages = [
 
 const deathMessages = [
   'Go Won\'s butterflies tries to save you, but any amount of butterflies can\'t lift you up into the air.',
-  'With a fit of rage, Chuu shoots her arrow into you. Game over.',
-  'Kim Lip brings the moon smashing down onto you.'
+  'With a fit of rage, Chuu shoots her arrow at you. Game over.',
+  'Kim Lip brings the moon smashing down onto you.',
+  'Olivia Hye pushes you off the diving board into the emptied swimming pool.'
 ]
 
 const edgeMessages = [
@@ -84,15 +86,18 @@ class SecondPage extends Component {
         <p>
           { this.state.message }
         </p>
-        <img
-          src={stanOrDie}
-          ref={this.wheel}
-          alt="A wheel with a horizontal split. The top half contains 'STAN' and the bottom half contains 'DIE'. This wheel rotates."
-          style={{
-            width: '300px',
-            backgroundColor: 'transparent'
-          }}
-        />
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+          <img src={pointer} />
+          <img
+            src={stanOrDie}
+            ref={this.wheel}
+            alt="A wheel with a horizontal split. The top half contains 'STAN' and the bottom half contains 'DIE'. This wheel rotates."
+            style={{
+              width: '300px',
+              backgroundColor: 'transparent'
+            }}
+          />
+        </div>
       </Layout>
     )
   }

@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { ParallaxProvider } from 'react-scroll-parallax';
 
-import Header from "../header"
+import Header from "../Header"
 import '../../scss/index.scss';
 
 import styles from './style.module.scss';

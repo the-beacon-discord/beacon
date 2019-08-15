@@ -1,6 +1,4 @@
 import React from "react";
-import discordLogo from '../../images/discord.svg';
-
 import styles from './style.module.scss';
 
 const DiscordServerButton = () => (

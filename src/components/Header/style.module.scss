@@ -1,0 +1,12 @@
+@import 'config';
+
+.header {
+	background-color: $colour;
+	width: 100vw;
+  margin-left: 50%;
+	transform: translateX(-50%);
+	.link {
+		color: black;
+		text-decoration: none;
+	}
+}

@@ -1,0 +1,5 @@
+$border-radius: 5px;
+$colour: #fe9900;
+@mixin blur($amount) {
+	box-shadow: $amount $amount $amount grey;
+}

@@ -1,97 +1,67 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# Coming soon to an RSS near you
+Don't ask about this project
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+## Tutorials
+### Before Editing
+1. Create a _Microsoft GitHub_ account
+    - There should be a `Sign up` button in the top right corner of your screen.
+    - [_For those lazy people, here's a link_](https://github.com/join)
+2. Install _Microsoft Visual Studio Code_
+    - https://code.visualstudio.com/
+3. Install `git-scm` for your operating system
+    - _Ubuntu_ - `sudo apt install git`
+    - _Microsoft Windows_
+        1. [Download Git](https://git-scm.com/downloads)
+        2. Run the executable
+        3. Read the terms of the GNU GPLv2 and agree to the licence
+        4. Click next on the installation destination location screen
+        5. Click next on the components screen
+        6. Click next on the "Start Menu Folder" screen
+        7. Click next on the "Adjusting your PATH environment" screen
+        8. Select "Checkout as-is, commit Unix-style line endings" on the "line ending" screen
+            - Technically you can choose whatever you like, but I will hate you if you upload any files saved with the Windows `\r\n` instead of the Unix `\n`.
+        9. Complete the installation.
+            - I recommend not reading the `ReleaseNotes.rtf` file.
+4. Open _Microsoft Visual Studio Code_, clone and open the project
+    1. Click the `View` menu at the top, and select the `Command Pallete` option.  
+    It should be the first option in the list
+    2. Type in `clone` and select `Git: clone`
+    3. Enter `https://github.com/7coil/beacon` as the Repository URL
+    4. Select a suitable location to download the files
+    5. Look at the bottom right hand corner of _Microsoft Visual Studio Code_  
+    There should be a little loading animation.  
+    After the "cloning" finishes, press the `Open` button in the bottom right hand corner.
+5. Close _Microsoft Visual Studio Code_ (for now)
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
-
-## 🚀 Quick start
-
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the default starter.
-
-    ```sh
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
+### Adding a podcast
+1. In the `/src/posts/podcast` folder, create a new folder with the episode number
+2. Create an `index.md` file in the folder, and add the following content:
     ```
+    ---
+    title: The name of the episode goes here
+    description: A description of what happened in the episode goes here
+    date: '2019-07-17'
+    ---
 
-1.  **Start developing.**
+    Whatever you want the webpage to show here.
+    Maybe add some cool images if you really want to.
 
-    Navigate into your new site’s directory and start it up.
-
-    ```sh
-    cd my-default-starter/
-    gatsby develop
+    Get some help with Markdown here:
+    https://guides.github.com/features/mastering-markdown/
     ```
-
-1.  **Open the source code and start editing!**
-
-    Your site is now running at `http://localhost:8000`!
-
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
-
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-
-## 🧐 What's inside?
-
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+3. Copy an MP3 file into the folder, and rename it as `podcast.mp3`
+4. Open _Microsoft Visual Studio Code_
+5. In the bar at the bottom, click the "sync" button in the bottom left.
+    - This synchronises your folder with the one stored on GitHub.
+6. Open the _Source Control_ tab
+    1. Look at the left hand side of _Microsoft Visual Studio Code_
+        - There should be five icons.
+        - Click the icon with:
+            - Three circles with some lines connecting together
+            - The icon that is above the bug
+            - The icon that is below the magnifying glass
+7. In the message box, enter a message to explain why you are adding the files listed below.
+    - I recommend something like `Adding episode 39 of the podcast`
+8. Press the tick above the message box
+9. In the bar at the bottom, click the "sync" button in the bottom left.
+10. Click Ok.

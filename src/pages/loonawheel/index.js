@@ -1,8 +1,8 @@
 /* global BigInt */
 
 import React, { Component } from 'react';
-import Layout from '../../components/layout';
-import SEO from '../../components/seo';
+import Layout from '../../components/Layout';
+import SEO from '../../components/SEO';
 import stanOrDie from './stan-or-die.png';
 import pointer from './pointer.png';
 

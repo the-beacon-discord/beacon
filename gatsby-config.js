@@ -194,7 +194,7 @@ module.exports = {
               },
               {
                 'itunes:image': {
-                  $: {
+                  _attr: {
                     href: websiteMetadata + '/static/images/podcast.png'
                   }
                 }

@@ -22,7 +22,15 @@ Don't ask about this project
             - Technically you can choose whatever you like, but I will hate you if you upload any files saved with the Windows `\r\n` instead of the Unix `\n`.
         9. Complete the installation.
             - I recommend not reading the `ReleaseNotes.rtf` file.
-4. Open _Microsoft Visual Studio Code_, clone and open the project
+4. Install _Node.js_ for your operating system
+    - [Download here](https://nodejs.org/)
+    - If you are running _Microsoft Windows_, don't tick the "Install with Chocolatey" option
+        1. After installing, open the _Start_ menu, and type in `cmd` - Right click it and open with Administrator permissions
+        2. Type the following command: `npm i -g windows-build-tools`
+            - This installs the tools required to build sub-programs that some dependencies use.
+        3. Wait for the command to complete, and type the following command: `npm i -g yarn`
+        4. Wait for the command to complete, and close the command prompt.
+5. Open _Microsoft Visual Studio Code_, clone and open the project
     1. Click the `View` menu at the top, and select the `Command Pallete` option.  
     It should be the first option in the list
     2. Type in `clone` and select `Git: clone`
@@ -31,16 +39,33 @@ Don't ask about this project
     5. Look at the bottom right hand corner of _Microsoft Visual Studio Code_  
     There should be a little loading animation.  
     After the "cloning" finishes, press the `Open` button in the bottom right hand corner.
-5. Close _Microsoft Visual Studio Code_ (for now)
+
+### Before Developing
+1. Click the `Terminal` menu at the top, and select the `New Terminal` option.  
+It should be the first option in the list
+2. Inside the terminal, run the `yarn` command
+    - This installs the dependencies required for the website to be built
+    - If the installation fails, try ask on Discord for help.
+
+### Checking up on what the website looks like while you are editing the website
+1. Run the `yarn develop` command
+2. With Google's _Google Chrome_, or Mozilla's _Mozilla Firefox_, open:
+    - `http://127.0.0.1:8000`
+        - The IP address 127.0.0.1, and any other 127.x.x.x addresses all point to the computer you are currently on.
+3. You should now be able to see the homepage.
 
 ### Adding a podcast
 1. In the `/src/posts/podcast` folder, create a new folder with the episode number
-2. Create an `index.md` file in the folder, and add the following content:
-    ```
+2. Create an `index.md` file in the folder, and add something resembling this:
+    ```markdown
     ---
-    title: The name of the episode goes here
-    description: A description of what happened in the episode goes here
-    date: '2019-07-17'
+    title: MitchiriNeko March
+    description: "Mitchiri-Neko" is a cat-like creature. They crowd closely together always everywhere (=´ω｀=)
+    date: 2019-08-16 23:19:53 +1
+    explicit: true
+    youtube: lAIGb1lfpBw
+    season: 1
+    episode: 23
     ---
 
     Whatever you want the webpage to show here.
@@ -49,6 +74,8 @@ Don't ask about this project
     Get some help with Markdown here:
     https://guides.github.com/features/mastering-markdown/
     ```
+    - Under NO circumstances should you put the episode number in the title.
+        - In the Fair and Democratic People's Republic of The Beacon, this is punishable by infinite pings.
 3. Copy an MP3 file into the folder, and rename it as `podcast.mp3`
 4. Open _Microsoft Visual Studio Code_
 5. In the bar at the bottom, click the "sync" button in the bottom left.

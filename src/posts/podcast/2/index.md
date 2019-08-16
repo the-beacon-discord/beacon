@@ -4,4 +4,6 @@ description: Li-en, ProWeeaboo and Zenith talk about stuff, but the writer hasn'
 date: 2019-04-28 18:51:04 +1
 explicit: true
 youtube: saYhzSQuXrk
+season: 2
+episode: 2
 ---

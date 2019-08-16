@@ -115,6 +115,8 @@ module.exports = {
 
                   newEdges.custom_elements.push(
                     {'itunes:author': 'The Beacon'},
+                    {'itunes:season': edge.node.frontmatter.season},
+                    {'itunes:episode': edge.node.frontmatter.episode},
                     {'itunes:summary': edge.node.frontmatter.description},
                     {'itunes:explicit': edge.node.frontmatter.explicit ? 'yes' : 'no'},
                     {'itunes:duration': formatMilliseconds(duration)}
@@ -149,6 +151,8 @@ module.exports = {
                         description
                         date
                         explicit
+                        season
+                        episode
                       }
                     }
                   }

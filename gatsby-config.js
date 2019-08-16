@@ -14,7 +14,7 @@ const podcastMetadata = {
   author: 'The Beacon',
   subtitle: 'LOONA stans doing absolutely nothing',
   description: 'Watch as LOONA stans discuss about what has been happening in their daily lives.',
-  email: 'admin@discordmail.com'
+  email: 'beacondiscord@gmail.com'
 }
 
 // https://stackoverflow.com/a/11486026

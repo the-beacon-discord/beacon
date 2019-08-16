@@ -45,7 +45,11 @@ const IndexPage = () => (
       }}
     />
     <Container>
-      <Link to="/podcast">Podcast</Link>
+      <ul>
+        <li><Link to="/podcast">Podcast</Link></li>
+        <li><Link to="/news">News</Link></li>
+        <li><Link to="/loonawheel">The LOONA wheel</Link></li>
+      </ul>
       <DiscordServerButton />
     </Container>
   </Layout>

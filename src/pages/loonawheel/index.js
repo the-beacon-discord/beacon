@@ -8,7 +8,7 @@ import Container from '../../components/Container';
 const aliveMessages = [
   'Go Won and her butterflies shuttle you away safely.',
   'Olivia Hye scares Chuu away.',
-  'BlockBerry creative has ran out of money to kill you.',
+  'BlockBerry Creative has ran out of money to kill you.',
   'JinSoul causes the rain to wash Chuu away.',
   'Yves and Chuu decide to go on a shopping spree.',
   'ViVi deletes Chuu from the spinner software.',

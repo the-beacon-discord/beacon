@@ -1,4 +1,4 @@
-# Coming soon to an RSS near you
+# The Beacon
 Don't ask about this project
 
 ## Tutorials

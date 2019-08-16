@@ -62,12 +62,24 @@ class Podcast extends Component {
           <table>
             <thead>
               <tr>
+                <td>
+                </td>
                 {Object.keys(this.state.scores).map(heading => <td key={heading}>{heading}</td>)}
               </tr>
             </thead>
             <tbody>
               <tr>
+                <td>
+                  Messages
+                </td>
                 {Object.entries(this.state.scores).map(row => <td key={row[0]}>{row[1]}</td>)}
+              </tr>
+              <tr>
+                <td>
+                  Message Score<br />
+                  (3 Points per 100 messages)
+                </td>
+                {Object.entries(this.state.scores).map(row => <td key={row[0]}>{Math.floor((row[1]/100)*3)}</td>)}
               </tr>
             </tbody>
           </table>

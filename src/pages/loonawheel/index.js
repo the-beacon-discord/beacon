@@ -1,5 +1,3 @@
-/* global BigInt */
-
 import React, { Component } from 'react';
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
@@ -91,7 +89,10 @@ class SecondPage extends Component {
           { this.state.message }
         </p>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-          <img src={pointer} />
+          <img
+            src={pointer}
+            alt="A pointer pointing downwards on the wheel below."
+          />
           <img
             src={stanOrDie}
             ref={this.wheel}

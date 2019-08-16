@@ -1,14 +1,13 @@
-import { Link } from 'gatsby';
 import React from 'react';
 import { ParallaxBanner } from 'react-scroll-parallax';
+import DiscordServerButton from '../components/DiscordServerButton';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import DiscordServerButton from '../components/DiscordServerButton'
-
 import one from '../images/parallax/1.png';
 import two from '../images/parallax/2.png';
 import three from '../images/parallax/3.png';
 import four from '../images/parallax/4.png';
+
 
 const IndexPage = () => (
   <Layout>

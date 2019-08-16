@@ -7,6 +7,7 @@ import one from '../images/parallax/1.png';
 import two from '../images/parallax/2.png';
 import three from '../images/parallax/3.png';
 import four from '../images/parallax/4.png';
+import { Link } from 'gatsby';
 
 
 const IndexPage = () => (
@@ -45,6 +46,9 @@ const IndexPage = () => (
         textAlign: 'center'
       }}
     />
+    <div>
+      <Link to="/podcast">Podcast</Link>
+    </div>
     <DiscordServerButton />
   </Layout>
 )

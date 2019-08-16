@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../../components/Layout";
 import YouTube from "../../components/YouTube";
 export default function Template({
@@ -9,7 +9,7 @@ export default function Template({
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
-      <h1>The Signal</h1>
+      <h1><Link to="/podcast">The Signal</Link> - {frontmatter.title}</h1>
       <h2>{frontmatter.description}</h2>
       <p><i>{frontmatter.date}</i></p>
       {frontmatter.youtube && <YouTube id={frontmatter.youtube} />}
@@ -22,8 +22,9 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        date(formatString: "Do MMMM YYYY")
+        title
         description
+        date(formatString: "Do MMMM YYYY")
         youtube
       }
     }

@@ -1,12 +1,12 @@
 const fetch = require('node-fetch');
-const scoresUrl = process.env.scores;
 
 exports.handler = (event, context, callback) => {
 	const { httpMethod } = event;
 	if (httpMethod === 'GET') {
+		const scoresUrl = process.env.scores;
 		fetch(scoresUrl)
 			.then(res => res.text())
-			.then(text => callback({
+			.then(text => callback(null, {
 				headers: {
 					'Content-Type': 'application/json'
 				},

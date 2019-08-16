@@ -5,3 +5,13 @@ body {
 	font-size: 110%;
 	height: 100vh;
 }
+
+table {
+	background-color: #ddd;
+	border-collapse: collapse;
+	td {
+		padding: 5px;
+		border-style: solid;
+		border-width: 1px;
+	}
+}

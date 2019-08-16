@@ -163,6 +163,7 @@ module.exports = {
               {'itunes:subtitle': podcastMetadata.subtitle},
               {'itunes:author': podcastMetadata.author},
               {'itunes:summary': podcastMetadata.description},
+              {'itunes:explicit': 'yes'},
               {
                 'itunes:category': [
                   {

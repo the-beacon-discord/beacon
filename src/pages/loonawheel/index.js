@@ -3,6 +3,7 @@ import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
 import stanOrDie from './stan-or-die.png';
 import pointer from './pointer.png';
+import Container from '../../components/Container';
 
 const aliveMessages = [
   'Go Won and her butterflies shuttle you away safely.',
@@ -82,27 +83,32 @@ class SecondPage extends Component {
   render() {
     return (
       <Layout>
-        <SEO title="loonathewheel" />
-        <h1>Spin the wheels!</h1>
-        <button onClick={this.spin} disabled={this.state.spinning}>Spin</button>
-        <p>
-          { this.state.message }
-        </p>
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-          <img
-            src={pointer}
-            alt="A pointer pointing downwards on the wheel below."
-          />
-          <img
-            src={stanOrDie}
-            ref={this.wheel}
-            alt="A wheel with a horizontal split. The top half contains 'STAN' and the bottom half contains 'DIE'. This wheel rotates."
-            style={{
-              width: '300px',
-              backgroundColor: 'transparent'
-            }}
-          />
-        </div>
+        <SEO
+        title="loonathewheel"
+        description="Test your luck to see if you will be killed by LOONA's Chuu."
+        />
+        <Container>
+          <h1>Spin the wheels!</h1>
+          <button onClick={this.spin} disabled={this.state.spinning}>Spin</button>
+          <p>
+            { this.state.message }
+          </p>
+          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <img
+              src={pointer}
+              alt="A pointer pointing downwards on the wheel below."
+            />
+            <img
+              src={stanOrDie}
+              ref={this.wheel}
+              alt="A wheel with a horizontal split. The top half contains 'STAN' and the bottom half contains 'DIE'. This wheel rotates."
+              style={{
+                width: '300px',
+                backgroundColor: 'transparent'
+              }}
+            />
+          </div>
+        </Container>
       </Layout>
     )
   }

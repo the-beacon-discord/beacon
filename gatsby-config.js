@@ -4,7 +4,7 @@ const getMP3Duration = require('get-mp3-duration');
 
 const websiteMetadata = {
   title: 'The Beacon',
-  description: 'Oh my god why is everything on fire? Olvia stop this please oh god please stop - I\'ll call JinSoul to tell you off!',
+  description: 'Something cool happens here.',
   author: 'The Beacon',
   siteUrl: 'https://thebeacon.netlify.com',
   github: 'https://github.com/7coil/beacon'
@@ -211,16 +211,14 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'The Beacon',
-        short_name: 'starter',
+        short_name: 'The Beacon',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#ffffff',
+        theme_color: '#fe9900',
         display: 'minimal-ui',
         icon: 'src/images/logo/256.png', // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // 'gatsby-plugin-offline',
+    'gatsby-plugin-offline',
   ],
 }

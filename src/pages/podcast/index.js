@@ -1,46 +1,48 @@
-import React, { Component } from 'react';
 import { graphql, Link } from 'gatsby';
+import React, { Component } from 'react';
 import Layout from '../../components/Layout';
-import SEO from '../../components/SEO';
+import Container from '../../components/Container';
 
 class Podcast extends Component {
   render() {
     return (
       <Layout>
-        <h1>The Signal</h1>
-        <table>
-          <thead>
-            <tr>
-              <td>
-                Date
-              </td>
-              <td>
-                Name
-              </td>
-              <td>
-                Description
-              </td>
-            </tr>
-          </thead>
-          <tbody>
-            {this.props.data.allMarkdownRemark.edges.map((edge) => {
-              const page = edge.node;
-              return (
-                <tr key={page.fields.slug}>
-                  <td>
-                    {page.frontmatter.date}
-                  </td>
-                  <td>
-                    <Link to={page.fields.slug}>{page.frontmatter.title}</Link>
-                  </td>
-                  <td>
-                    {page.frontmatter.description}
-                  </td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
+        <Container>
+          <h1>The Signal</h1>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  Date
+                </td>
+                <td>
+                  Name
+                </td>
+                <td>
+                  Description
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              {this.props.data.allMarkdownRemark.edges.map((edge) => {
+                const page = edge.node;
+                return (
+                  <tr key={page.fields.slug}>
+                    <td>
+                      {page.frontmatter.date}
+                    </td>
+                    <td>
+                      <Link to={page.fields.slug}>{page.frontmatter.title}</Link>
+                    </td>
+                    <td>
+                      {page.frontmatter.description}
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </Container>
       </Layout>
     )
   }

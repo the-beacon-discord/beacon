@@ -8,6 +8,7 @@ import two from '../images/parallax/2.png';
 import three from '../images/parallax/3.png';
 import four from '../images/parallax/4.png';
 import { Link } from 'gatsby';
+import Container from '../components/Container';
 
 
 const IndexPage = () => (
@@ -38,18 +39,15 @@ const IndexPage = () => (
       ]}
       style={{
         height: '40vh',
-        width: '100vw',
-        marginLeft: '50%',
-        transform: 'translateX(-50%)',
         imageRendering: 'crisp-edges',
         backgroundColor: '#222',
         textAlign: 'center'
       }}
     />
-    <div>
+    <Container>
       <Link to="/podcast">Podcast</Link>
-    </div>
-    <DiscordServerButton />
+      <DiscordServerButton />
+    </Container>
   </Layout>
 )
 

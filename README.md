@@ -1,5 +1,5 @@
 # The Beacon
-Don't ask about this project
+This is a work in progress
 
 ## Tutorials
 ### Before Editing

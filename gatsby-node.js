@@ -172,7 +172,7 @@ exports.onPostBuild = ({ graphql }) => {
 							'itunes:name': {
 								_text: podcastMetadata.author
 							},
-							'ituines:email': {
+							'itunes:email': {
 								_text: podcastMetadata.email
 							}
 						},

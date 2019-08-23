@@ -165,6 +165,9 @@ exports.onPostBuild = ({ graphql }) => {
 						language: {
 							_text: podcastMetadata.language
 						},
+						author: {
+							_text: podcastMetadata.author
+						},
 						'itunes:author': {
 							_text: podcastMetadata.author
 						},

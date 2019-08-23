@@ -243,6 +243,9 @@ exports.onPostBuild = ({ graphql }) => {
 									link: {
 										_text: `${result.data.site.siteMetadata.siteUrl}${node.fields.slug}`
 									},
+									author: {
+										_text: podcastMetadata.author
+									},
 									'itunes:author': {
 										_text: podcastMetadata.author
 									},

@@ -128,7 +128,7 @@ exports.onPostBuild = ({ graphql }) => {
 			const podcastMetadata = result.data.site.siteMetadata.podcast;
 
 			const output = {
-				_decleration: {
+				_declaration: {
 					_attributes: {
 						version: '1.0',
 						encoding: 'UTF-8'

@@ -98,6 +98,7 @@ exports.onPostBuild = ({ graphql }) => {
 						explicit
 						subtitle
 						email
+						copyright
 					}
 				}
 			}
@@ -168,6 +169,12 @@ exports.onPostBuild = ({ graphql }) => {
 						author: {
 							_text: podcastMetadata.author
 						},
+						generator: {
+							_text: 'Katielabs Shit XML Machine - https://github.com/the-beacon-discord/beacon'
+						},
+						copyright: {
+							_text: podcastMetadata.copyright
+						},
 						'itunes:author': {
 							_text: podcastMetadata.author
 						},
@@ -181,6 +188,11 @@ exports.onPostBuild = ({ graphql }) => {
 						},
 						'itunes:image': {
 							_text: `${result.data.site.siteMetadata.siteUrl}/images/podcast.png`
+						},
+						image: {
+							url: {
+								_text: `${result.data.site.siteMetadata.siteUrl}/images/podcast.png`
+							}
 						},
 						'itunes:explicit': {
 							_text: podcastMetadata.explicit

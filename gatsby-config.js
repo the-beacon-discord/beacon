@@ -10,14 +10,15 @@ const websiteMetadata = {
   siteUrl: 'https://thebeacon.netlify.com',
   github: 'https://github.com/7coil/beacon',
   podcast: {
-    title: 'The Beacon',
+    title: 'The Signal',
     description: 'Watch as LOONA stans discuss about what has been happening in their daily lives.',
-    author: 'The Signal',
+    author: 'The Beacon',
     language: 'en-GB',
     siteUrl: 'https://thebeacon.netlify.com',
     subtitle: 'LOONA stans doing absolutely nothing',
     explicit: 'yes', // Allowed values: `yes` or `clean`
-    email: 'beacondiscord@gmail.com'
+    email: 'beacondiscord@gmail.com',
+    copyright: 'The Beacon'
   }
 };
 

@@ -167,7 +167,7 @@ exports.onPostBuild = ({ graphql }) => {
 							_text: podcastMetadata.language
 						},
 						author: {
-							_text: podcastMetadata.author
+							_text: podcastMetadata.email
 						},
 						generator: {
 							_text: 'Katielabs Shit XML Machine - https://github.com/the-beacon-discord/beacon'
@@ -256,7 +256,7 @@ exports.onPostBuild = ({ graphql }) => {
 										_text: `${result.data.site.siteMetadata.siteUrl}${node.fields.slug}`
 									},
 									author: {
-										_text: podcastMetadata.author
+										_text: podcastMetadata.email
 									},
 									'itunes:author': {
 										_text: podcastMetadata.author

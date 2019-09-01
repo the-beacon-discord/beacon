@@ -11,8 +11,8 @@
 	}
 
 	a {
-		color: darken(white, 70%);
-		text-decoration: none;
+		color: darken(white, 90%);
+		// text-decoration: none;
 		transition: color 0.1s;
 		&:hover {
 			color: darken(white, 10%)

@@ -1,7 +1,23 @@
+@import 'config';
+
 .parallax {
 	height: 40vh;
 	image-rendering: crisp-edges;
 	image-rendering: pixelated; // Fallback for Google's Google Chrome
 	background-color: #222;
 	text-align: center;
+	.parallaxText {
+		color: white;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 2em;
+		h1, h2 {
+			margin-top: 0;
+		}
+	}
+}
+
+.discordButton {
+	background-color: $discord-colour;
 }

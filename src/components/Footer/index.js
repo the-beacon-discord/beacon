@@ -1,8 +1,8 @@
-import { Link, StaticQuery } from "gatsby"
-import React, { Component } from "react"
-
-import styles from './style.module.scss';
+import { StaticQuery } from "gatsby";
+import React, { Component } from "react";
 import Container from "../Container";
+import styles from './style.module.scss';
+
 
 class Footer extends Component {
   render() {
@@ -12,7 +12,7 @@ class Footer extends Component {
           <ul>
             <StaticQuery
                 query={graphql`
-                query indexPage {
+                query footer {
                   site {
                     siteMetadata {
                       github

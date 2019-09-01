@@ -1,4 +1,10 @@
+@import 'config';
+
 .container {
 	margin: 0 auto;
+	padding: 0 1em;
 	max-width: 960px;
+	@include onMobile {
+		padding: 0;
+	}
 }

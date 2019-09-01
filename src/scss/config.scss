@@ -13,3 +13,9 @@ $discord-colour: #7289DA;
 		box-shadow: calc(2px * (#{$amount} + 1)) calc(2px * (#{$amount} + 1)) 2px rgba(0, 0, 0, 0.8);
 	}
 }
+
+@mixin onMobile {
+	@media screen and (max-width: 600px) {
+		@content;
+	}
+}

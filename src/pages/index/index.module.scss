@@ -1,0 +1,7 @@
+.parallax {
+	height: 40vh;
+	image-rendering: crisp-edges;
+	image-rendering: pixelated; // Fallback for Google's Google Chrome
+	background-color: #222;
+	text-align: center;
+}

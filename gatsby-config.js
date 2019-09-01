@@ -9,6 +9,7 @@ const websiteMetadata = {
   language: 'en-GB',
   siteUrl: 'https://thebeacon.netlify.com',
   github: 'https://github.com/7coil/beacon',
+  discord: 'https://discord.gg/2Zw2XxB',
   podcast: {
     title: 'The Signal',
     description: 'Watch as LOONA stans discuss about what has been happening in their daily lives.',

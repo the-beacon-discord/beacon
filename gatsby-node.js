@@ -16,6 +16,26 @@ const formatMilliseconds = (ms) => {
   return `${hrs < 10 ? '0' : ''}${hrs}:${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
 }
 
+// https://github.com/gatsbyjs/gatsby/issues/7363
+exports.onCreatePage = ({ page, actions }) => {
+  const { deletePage, createPage } = actions
+
+  return new Promise((resolve) => {
+		// if the page component is the index page component
+    if (page.componentPath.includes('/src/pages/index/index.js')) {
+      deletePage(page)
+
+      // create a new page but with '/' as path
+      createPage({
+        ...page,
+        path: '/',
+      })
+    }
+
+    resolve()
+  })
+}
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
 	/**
 	 * Organise Markdown files into their specific category

@@ -10,7 +10,8 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { ParallaxProvider } from 'react-scroll-parallax';
 
-import Header from "../Header"
+import Header from '../Header'
+import Footer from '../Footer';
 import '../../scss/index.scss';
 
 import styles from './style.module.scss';
@@ -35,6 +36,7 @@ const Layout = ({ children }) => {
         <main style={{
           flexGrow: '1'
         }}>{children}</main>
+        <Footer siteTitle={data.site.siteMetadata.title} />
       </div>
     </ParallaxProvider>
   )

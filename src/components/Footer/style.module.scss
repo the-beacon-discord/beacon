@@ -1,0 +1,35 @@
+@import 'config';
+
+.footer {
+	background-color: $primary-colour;
+	width: 100%;
+	overflow: auto;
+
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	a {
+		color: darken(white, 70%);
+		text-decoration: none;
+		transition: color 0.1s;
+		&:hover {
+			color: darken(white, 10%)
+		}
+	}
+
+	.copyright {
+		background-color: darken($primary-colour, 10%);
+		.copyrightText {
+			display: block;
+			margin: 0;
+			padding: 1em 0;
+		}
+	}
+
+	.link {
+		color: black;
+		text-decoration: none;
+	}
+}

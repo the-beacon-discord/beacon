@@ -7,10 +7,11 @@
 
 import React from 'react'
 import styles from './style.module.scss';
+import CombineStyles from '../../helpers/CombineStyles';
 
-const Container = ({ children }) => {
+const Container = ({ children, className, outerClassName, ...props }) => {
   return (
-    <div className={styles.container}>
+    <div className={CombineStyles(styles.container, className)} {...props}>
       {children}
     </div>
   )

@@ -84,8 +84,8 @@ class SecondPage extends Component {
     return (
       <Layout>
         <SEO
-        title="loonathewheel"
-        description="Test your luck to see if you will be killed by LOONA's Chuu."
+          title="loonathewheel"
+          description="Test your luck to see if you will be killed by LOONA's Chuu."
         />
         <Container>
           <h1>Spin the wheels!</h1>

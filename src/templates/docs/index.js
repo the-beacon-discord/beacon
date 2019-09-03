@@ -5,6 +5,7 @@ import Container from '../../components/Container';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import MdxTableOfContents from '../../components/MdxTableOfContents';
 import UpFolderButton from '../../components/UpFolderButton';
+import SEO from '../../components/SEO';
 
 const Documentation = ({
   data, // this prop will be injected by the GraphQL query below.
@@ -14,6 +15,10 @@ const Documentation = ({
   return (
     <Layout>
       <Container>
+        <SEO
+          title={frontmatter.title}
+          description={frontmatter.description}
+        />
         <UpFolderButton />
         <h1>{frontmatter.title}</h1>
         <p><i>{frontmatter.date}</i></p>

@@ -4,6 +4,7 @@ import Layout from '../../components/Layout';
 import YouTube from '../../components/YouTube';
 import Container from '../../components/Container';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import SEO from '../../components/SEO';
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -12,6 +13,10 @@ export default function Template({
   const { frontmatter, body } = mdx
   return (
     <Layout>
+      <SEO
+        title={frontmatter.title}
+        description={frontmatter.description}
+      />
       <Container>
         <h1><Link to="/podcast">The Signal</Link> - {frontmatter.title}</h1>
         <h2>{frontmatter.description}</h2>

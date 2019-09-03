@@ -1,13 +1,15 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
-import Layout from "../../components/Layout";
-import YouTube from "../../components/YouTube";
-import Container from "../../components/Container";
+import React from 'react'
+import { graphql, Link } from 'gatsby'
+import Layout from '../../components/Layout';
+import YouTube from '../../components/YouTube';
+import Container from '../../components/Container';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
-  const { markdownRemark } = data // data.markdownRemark holds our post data
-  const { frontmatter, html } = markdownRemark
+  const { mdx } = data // data.mdx holds our post data
+  const { frontmatter, body } = mdx
   return (
     <Layout>
       <Container>
@@ -15,15 +17,15 @@ export default function Template({
         <h2>{frontmatter.description}</h2>
         <p><i>{frontmatter.date}</i></p>
         {frontmatter.youtube && <YouTube id={frontmatter.youtube} />}
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <MDXRenderer>{body}</MDXRenderer>
       </Container>
     </Layout>
   )
 }
 export const pageQuery = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         title
         description

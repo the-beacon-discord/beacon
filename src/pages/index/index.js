@@ -11,7 +11,7 @@ import two from '../../images/parallax/2.png';
 import three from '../../images/parallax/3.png';
 import four from '../../images/parallax/4.png';
 import styles from './index.module.scss';
-
+import Row from '../../components/Row';
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -38,7 +38,10 @@ const IndexPage = ({ data }) => (
           children: <div className={styles.parallaxText}>
             <h1>The Beacon</h1>
             <h2>Community Gaming Server</h2>
-            <Button href={data.site.siteMetadata.discord} className={styles.discordButton}>Discord</Button>
+            <Row>
+              <Button href={data.site.siteMetadata.discord} className={styles.discordButton}>Discord</Button>
+              <Button href={data.site.siteMetadata.youtube} className={styles.youtubeButton}>YouTube</Button>
+            </Row>
           </div>,
           amount: 0.01
         }
@@ -49,6 +52,7 @@ const IndexPage = ({ data }) => (
       <ul>
         <li><Link to="/podcast">Podcast</Link></li>
         <li><Link to="/news">News</Link></li>
+        <li><Link to="/docs">Documentation</Link></li>
         <li><Link to="/loonawheel">The LOONA wheel</Link></li>
       </ul>
       <DiscordServerEmbed />
@@ -62,6 +66,7 @@ query indexPage {
     siteMetadata {
       github
       discord
+      youtube
     }
   }
 }

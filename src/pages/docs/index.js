@@ -3,17 +3,20 @@ import React, { Component } from 'react';
 import Layout from '../../components/Layout';
 import Container from '../../components/Container';
 
-class Podcast extends Component {
+class Documentation extends Component {
   render() {
     return (
       <Layout>
         <Container>
-          <h1>The Signal</h1>
+          <h1>Documentation</h1>
           <table>
             <thead>
               <tr>
                 <td>
-                  Date
+                  Edited
+                </td>
+                <td>
+                  Path
                 </td>
                 <td>
                   Name
@@ -30,6 +33,9 @@ class Podcast extends Component {
                   <tr key={page.fields.slug}>
                     <td>
                       {page.frontmatter.date}
+                    </td>
+                    <td>
+                      {page.fields.slug}
                     </td>
                     <td>
                       <Link to={page.fields.slug}>{page.frontmatter.title}</Link>
@@ -49,9 +55,9 @@ class Podcast extends Component {
 }
 
 export const query = graphql`
-query podcastList {
+query documentationList {
   allMdx(
-    filter:{fields:{template:{eq: "podcast"}}}
+    filter:{fields:{template:{eq: "docs"}}}
     sort: { order: DESC, fields: [frontmatter___date] }
   ) {
     edges {
@@ -64,7 +70,6 @@ query podcastList {
           title
           description
           date(formatString: "Do MMMM YYYY")
-          explicit
         }
       }
     }
@@ -72,4 +77,4 @@ query podcastList {
 }
 `
 
-export default Podcast
+export default Documentation

@@ -10,6 +10,7 @@ const websiteMetadata = {
   siteUrl: 'https://thebeacon.netlify.com',
   github: 'https://github.com/7coil/beacon',
   discord: 'https://discord.gg/2Zw2XxB',
+  youtube: 'https://www.youtube.com/channel/UCFW1hIgpFxsfzM2GxMyIaiw',
   podcast: {
     title: 'The Signal',
     description: 'Watch as LOONA stans discuss about what has been happening in their daily lives.',
@@ -50,9 +51,18 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        extensions: [
+          '.mdx',
+          '.md'
+        ]
+      }
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'markdown-pages',
+        name: 'posts',
         path: `${__dirname}/src/posts`,
       },
     },

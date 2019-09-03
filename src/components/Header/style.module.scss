@@ -2,6 +2,7 @@
 
 .header {
 	background-color: $primary-colour;
+	@include blur;
 	width: 100%;
 	.link {
 		color: black;

@@ -30,7 +30,7 @@ exports.onCreatePage = ({ page, actions }) => {
         ...page,
         path: '/',
       })
-    }
+		}
 
     resolve()
   })
@@ -42,7 +42,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 	 * For example, the `podcast` category.
 	 */
 	const { createNodeField } = actions;
-	if (node.internal.type === 'MarkdownRemark') {
+	if (node.internal.type === 'Mdx') {
 		const parent = getNode(node.parent);
 		const directoryParts = parent.relativeDirectory.split(/[\\/]/);
 
@@ -67,7 +67,7 @@ exports.createPages = ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   return graphql(`
     {
-      allMarkdownRemark(
+      allMdx(
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
       ) {
@@ -88,7 +88,7 @@ exports.createPages = ({ actions, graphql, reporter }) => {
 				reporter.panicOnBuild(`Error while running GraphQL query.`)
 				return
 			}
-			result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+			result.data.allMdx.edges.forEach(({ node }) => {
 				createPage({
 					// Set the path down
 					path: node.fields.slug,
@@ -122,7 +122,7 @@ exports.onPostBuild = ({ graphql }) => {
 					}
 				}
 			}
-			allMarkdownRemark(
+			allMdx(
 				sort: { order: DESC, fields: [frontmatter___date] }
 				limit: 1000
 			) {
@@ -234,7 +234,7 @@ exports.onPostBuild = ({ graphql }) => {
 								}
 							}
 						],
-						item: result.data.allMarkdownRemark.edges
+						item: result.data.allMdx.edges
 							.filter(({ node }) => node.fields.template === 'podcast')
 							.map(({ node }) => {
 								// Open the podcast.mp3 file

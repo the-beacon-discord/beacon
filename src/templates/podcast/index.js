@@ -10,7 +10,7 @@ export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   const { mdx } = data // data.mdx holds our post data
-  const { frontmatter, body } = mdx
+  const { frontmatter, body, fields } = mdx
   return (
     <Layout>
       <SEO
@@ -22,6 +22,11 @@ export default function Template({
         <h2>{frontmatter.description}</h2>
         <p><i>{frontmatter.date}</i></p>
         {frontmatter.youtube && <YouTube id={frontmatter.youtube} />}
+        <noscript>
+          <audio controls>
+            <source src={`${fields.slug}podcast.mp3`} />
+          </audio>
+        </noscript>
         <MDXRenderer>{body}</MDXRenderer>
       </Container>
     </Layout>
@@ -31,6 +36,9 @@ export const pageQuery = graphql`
   query($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       body
+      fields {
+        slug
+      }
       frontmatter {
         title
         description

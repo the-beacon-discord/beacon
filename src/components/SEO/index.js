@@ -9,76 +9,22 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { Location } from '@reach/router';
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
-
-  const metaDescription = description || site.siteMetadata.description
-
+const SEO = ({
+  title,
+  description,
+  image
+}) => {
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      defaultTitle={site.siteMetadata.title}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    >
-      <link rel="alternative" type="application/rss+xml" title="The Beacon RSS Feed" href="/rss.xml" />
+    <Helmet>
+      {title && <meta property="og:title" content={title} />}
+      {title && <meta name="twitter:title" content={title} />}
+      {description && <meta property="og:description" content={description} />}
+      {description && <meta name="description" content={description} />}
+      {description && <meta name="twitter:description" content={description} />}
     </Helmet>
   )
-}
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
 }
 
 SEO.propTypes = {

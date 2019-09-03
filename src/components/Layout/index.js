@@ -17,6 +17,7 @@ import '../../scss/index.scss';
 
 import styles from './style.module.scss';
 import { Heading1, Heading2, Heading3, Heading5, Heading6, Heading4 } from '../Heading';
+import DefaultSEO from '../DefaultSEO';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -41,6 +42,7 @@ const Layout = ({ children }) => {
           h6: Heading6
         }}
       >
+        <DefaultSEO />
         <div
           className={styles.body}
         >

@@ -15,7 +15,6 @@ import Row from '../../components/Row';
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO />
     <ParallaxBanner
       layers={[
         {

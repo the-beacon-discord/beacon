@@ -1,7 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-const getMP3Duration = require('get-mp3-duration');
-
 const websiteMetadata = {
   title: 'The Beacon',
   description: 'Something cool happens here.',

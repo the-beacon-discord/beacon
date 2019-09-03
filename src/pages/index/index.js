@@ -5,13 +5,12 @@ import Button from '../../components/Button';
 import Container from '../../components/Container';
 import DiscordServerEmbed from '../../components/DiscordServerEmbed';
 import Layout from '../../components/Layout';
-import SEO from '../../components/SEO';
+import Row from '../../components/Row';
 import one from '../../images/parallax/1.png';
 import two from '../../images/parallax/2.png';
 import three from '../../images/parallax/3.png';
 import four from '../../images/parallax/4.png';
 import styles from './index.module.scss';
-import Row from '../../components/Row';
 
 const IndexPage = ({ data }) => (
   <Layout>

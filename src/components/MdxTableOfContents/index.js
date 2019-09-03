@@ -50,7 +50,7 @@ const MdxTableOfContents = ({ headings }) => {
 	// Add children to their own ordered list
 	const makeToc = (headings) => {
 		return headings.map(heading =>
-			<li>
+			<li key={heading.id}>
 				<a href={`#${encodeURIComponent(heading.value)}`}>{heading.value}</a>
 				<ol>
 					{makeToc(heading.children)}

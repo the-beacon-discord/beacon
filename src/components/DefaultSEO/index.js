@@ -11,8 +11,6 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { Location } from '@reach/router';
 
-import logo from '../../images/logo/256.png'
-
 const DefaultSEO = ({
   lang = 'en-GB'
 }) => {
@@ -59,7 +57,7 @@ const DefaultSEO = ({
           },
           {
             property: 'og:image',
-            content: logo
+            content: '/images/logo/256.png'
           },
           {
             name: `twitter:card`,

@@ -24,7 +24,7 @@ class Podcast extends Component {
               </tr>
             </thead>
             <tbody>
-              {this.props.data.allMarkdownRemark.edges.map((edge) => {
+              {this.props.data.allMdx.edges.map((edge) => {
                 const page = edge.node;
                 return (
                   <tr key={page.fields.slug}>
@@ -50,7 +50,7 @@ class Podcast extends Component {
 
 export const query = graphql`
 query podcastList {
-  allMarkdownRemark(
+  allMdx(
     filter:{fields:{template:{eq: "podcast"}}}
     sort: { order: DESC, fields: [frontmatter___date] }
   ) {

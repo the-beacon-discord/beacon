@@ -1,3 +1,5 @@
+@import 'config';
+
 body {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -7,14 +9,25 @@ body {
 	box-sizing: border-box;
 }
 
+code {
+	font-family: 'Courier New', Courier, monospace
+}
+
 table {
+	@include blur;
 	background-color: #ddd;
 	border-collapse: collapse;
-	td {
+	margin: 0.5em;
+	td, th {
 		padding: 5px;
 		border-style: solid;
 		border-width: 1px;
+		border-color: #bbb;
 	}
+}
+
+img {
+	max-width: 100%;
 }
 
 blockquote {

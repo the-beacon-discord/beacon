@@ -1,16 +1,18 @@
 $border-radius: 5px;
+$shadow-size: 2px;
 $primary-colour: #fe9900;
 $discord-colour: #7289DA;
+$youtube-colour: red;
 
-@mixin blur($amount) {
+@mixin blur($amount: $shadow-size) {
 	box-shadow: $amount $amount $amount grey;
 }
 
 @mixin hoverShadow($amount: 1) {
-	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+	box-shadow: $shadow-size $shadow-size 2px rgba(0, 0, 0, 0.8);
 	transition: box-shadow 0.1s;
 	&:hover {
-		box-shadow: calc(2px * (#{$amount} + 1)) calc(2px * (#{$amount} + 1)) 2px rgba(0, 0, 0, 0.8);
+		box-shadow: calc(2px + (#{$amount} * 2px)) calc(2px + (#{$amount} * 2px)) 2px rgba(0, 0, 0, 0.8);
 	}
 }
 

@@ -20,4 +20,14 @@
 
 .discordButton {
 	background-color: $discord-colour;
+	a {
+		color: black;
+	}
+}
+
+.youtubeButton {
+	background-color: $youtube-colour;
+	a {
+		color: white;
+	}
 }

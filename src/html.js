@@ -18,7 +18,10 @@ export default function HTML(props) {
         {props.preBodyComponents}
         <noscript key="noscript" id="gatsby-noscript">
           <Container>
-            Bad news - You need JavaScript to enjoy The Beacon website. Try installing Mozilla Firefox or Google Chrome.
+            <p>
+              JavaScript is not enabled, which can affect the quality of your browsing experience.<br />
+              You may find that embedded YouTube videos and "The LOONA wheel" no longer function.
+            </p>
           </Container>
         </noscript>
         <div

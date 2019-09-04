@@ -14,7 +14,8 @@ class Documentation extends Component {
             Get useful information about the server, and tips on Discord as a whole.
           </p>
           <ul>
-            <li><Link to="/docs/discord">Discord and the Discord Server</Link></li>
+            <li><Link to="/docs/beacon">Beacon Rules and Roles</Link></li>
+            <li><Link to="/docs/discord">Discord Tips and Tricks</Link></li>
             <li><Link to="/docs/website">Website Development</Link></li>
           </ul>
           <h3>All Docs</h3>

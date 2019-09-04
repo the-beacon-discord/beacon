@@ -16,6 +16,7 @@ const SEO = ({
 }) => {
   return (
     <Helmet>
+      {title && <title>{title}</title>}
       {title && <meta property="og:title" content={title} />}
       {title && <meta name="twitter:title" content={title} />}
       {description && <meta property="og:description" content={description} />}

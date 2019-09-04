@@ -6,7 +6,7 @@ const Heading = (level) => {
 	return ({ children, ...props }) => React.createElement(
 		`h${level}`,
 		Object.assign({
-			id: encodeURIComponent(children.toString())
+			id: encodeURIComponent(children && children.toString())
 		}, props),
 		children
 	)

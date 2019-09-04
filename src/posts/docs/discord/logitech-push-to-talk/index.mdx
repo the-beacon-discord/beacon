@@ -1,0 +1,49 @@
+---
+title: Push to Talk using the Logitech Gaming Software
+description: Set up your mouse to use the F13 to F24 keys when you press one of the buttons intended for rebinding using the Logitech Gaming Software's scripting feature
+date: 2019-09-04 01:18:20 +1
+---
+
+import mousingGif from './mousing.gif';
+
+## Installation
+1. Copy the code below
+2. Open the Logitech Gaming Software, click on the mouse and open the scripting tools
+3. Paste in the code
+4. Press the button you want to push to talk with on your mouse
+
+<img src={mousingGif} />
+
+## Code
+```lua
+-- Listen to all mouse and keyboard events
+function OnEvent(event, arg)
+  -- Table of all the F keys from F13 to F24
+  keycodes = {
+    [1] = 0x64, -- F13
+    [2] = 0x65, -- F14
+    [3] = 0x66, -- F15
+    [4] = 0x67, -- F16
+    [5] = 0x68, -- F17
+    [6] = 0x69, -- F18
+    [7] = 0x6A, -- F19
+    [8] = 0x6B, -- F20
+    [9] = 0x6C, -- F21
+    [10] = 0x6D, -- F22
+    [11] = 0x6E, -- F23
+    [12] = 0x76  -- F24
+  }
+
+	-- When a mouse button is pressed, also press an F key.
+	-- and then find the mouse key number in the table
+	-- For example, if Middle Click is pressed, (Mouse button 3), press F15
+  if (event == 'MOUSE_BUTTON_PRESSED') then
+    PressKey(keycodes[arg])
+  end
+
+  if (event == 'MOUSE_BUTTON_RELEASED') then
+    ReleaseKey(keycodes[arg])
+  end
+
+end
+```

@@ -18,6 +18,7 @@ import '../../scss/index.scss';
 import styles from './style.module.scss';
 import { Heading1, Heading2, Heading3, Heading5, Heading6, Heading4 } from '../Heading';
 import DefaultSEO from '../DefaultSEO';
+import CodeBlock from '../CodeBlock';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -39,7 +40,9 @@ const Layout = ({ children }) => {
           h3: Heading3,
           h4: Heading4,
           h5: Heading5,
-          h6: Heading6
+          h6: Heading6,
+          pre: (props) => <div {...props} />,
+          code: CodeBlock
         }}
       >
         <DefaultSEO />

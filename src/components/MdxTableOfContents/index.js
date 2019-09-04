@@ -2,25 +2,27 @@ import React from 'react'
 import styles from './style.module.scss';
 
 const MdxTableOfContents = ({ headings }) => {
-	const map = headings.map((heading, index) => {
-		heading.parent = null;
-		heading.id = index;
+	const map = headings
+		.filter(heading => heading.value)
+		.map((heading, index) => {
+			heading.parent = null;
+			heading.id = index;
 
-		if (index === 0) {
-			return heading;
-		}
-
-		// Turn the stupid list into a list with parents
-		for (let i = (index - 1); i >= 0; i--) {
-			if (heading.depth <= headings[i].depth) {
-				continue;
-			} else if (heading.depth > headings[i].depth) {
-				heading.parent = headings[i].id;
+			if (index === 0) {
 				return heading;
 			}
-		}
-		return heading;
-	})
+
+			// Turn the stupid list into a list with parents
+			for (let i = (index - 1); i >= 0; i--) {
+				if (heading.depth <= headings[i].depth) {
+					continue;
+				} else if (heading.depth > headings[i].depth) {
+					heading.parent = headings[i].id;
+					return heading;
+				}
+			}
+			return heading;
+		})
 
 	// Turn the list with parents into a tree
 	// https://stackoverflow.com/a/57313017

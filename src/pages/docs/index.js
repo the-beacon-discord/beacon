@@ -8,7 +8,16 @@ class Documentation extends Component {
     return (
       <Layout>
         <Container>
-          <h1>Documentation</h1>
+          <h1>The Beacon Wiki</h1>
+          <p>
+            Welcome to The Beacon Wiki!<br />
+            Get useful information about the server, and tips on Discord as a whole.
+          </p>
+          <ul>
+            <li><Link to="/docs/discord">Discord Server</Link></li>
+            <li><Link to="/docs/website">Website Development</Link></li>
+          </ul>
+          <h3>All Docs</h3>
           <table>
             <thead>
               <tr>

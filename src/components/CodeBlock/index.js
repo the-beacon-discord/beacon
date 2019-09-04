@@ -4,6 +4,7 @@ import React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import Prism from 'prismjs';
 import 'prismjs/components/prism-lua'
+import 'prismjs/components/prism-markdown'
 
 export default ({ children, className }) => {
 	const language = className.replace(/language-/, '')

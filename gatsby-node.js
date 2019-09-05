@@ -160,11 +160,11 @@ exports.onPostBuild = ({ graphql }) => {
 						'xmlns:dc': 'http://purl.org/dc/elements/1.1/',
 						'xmlns:content': 'http://purl.org/rss/1.0/modules/content/',
 						'xmlns:atom': 'http://www.w3.org/2005/Atom',
-						'xmlns:itunes': 'https://www.itunes.com/dtds/podcast-1.0.dtd',
-						'xmlns:media': 'https://www.itunes.com/dtds/podcast-1.0.dtd',
-						'xmlns:dcterms': 'https://purl.org/dc/terms',
-						'xmlns:spotify': 'https://www.spotify.com/ns/rss',
-						'xmlns:psc': 'https://podlove.org/simple-characters',
+						'xmlns:itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd',
+						'xmlns:media': 'http://www.itunes.com/dtds/podcast-1.0.dtd',
+						'xmlns:dcterms': 'http://purl.org/dc/terms',
+						'xmlns:spotify': 'http://www.spotify.com/ns/rss',
+						'xmlns:psc': 'http://podlove.org/simple-characters',
 						version: '2.0'
 					},
 					channel: {

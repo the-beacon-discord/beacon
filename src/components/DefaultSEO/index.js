@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { Location } from '@reach/router';
+import favicon from '../../images/logo/favicon.png';
 
 const DefaultSEO = ({
   lang = 'en-GB'
@@ -87,6 +88,7 @@ const DefaultSEO = ({
             meta={metaTags}
           >
             <link rel="alternative" type="application/rss+xml" title="The Beacon RSS Feed" href="/rss.xml" />
+            <link rel="shortcut icon" type="image/png" href={favicon} />
           </Helmet>
         )
       }}

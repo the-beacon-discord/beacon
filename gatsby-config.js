@@ -80,6 +80,7 @@ module.exports = {
         theme_color: '#fe9900',
         display: 'minimal-ui',
         icon: 'src/images/logo/256.png', // This path is relative to the root of the site.
+        include_favicon: false
       },
     },
     'gatsby-plugin-offline',

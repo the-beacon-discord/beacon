@@ -204,11 +204,11 @@ exports.onPostBuild = ({ graphql }) => {
 							}
 						},
 						'itunes:image': {
-							_text: `${result.data.site.siteMetadata.siteUrl}/images/podcast.png`
+							_text: `${result.data.site.siteMetadata.siteUrl}/images/logo/3000.png`
 						},
 						image: {
 							url: {
-								_text: `${result.data.site.siteMetadata.siteUrl}/images/podcast.png`
+								_text: `${result.data.site.siteMetadata.siteUrl}/images/logo/3000.png`
 							}
 						},
 						'itunes:explicit': {

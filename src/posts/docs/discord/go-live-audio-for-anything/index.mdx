@@ -1,0 +1,90 @@
+---
+title: Go Live on Discord for almost any application on Windows 7, 8, or 10 Pro
+description: Use RDP Wrapper and a bit of copying to allow yourself to stream almost any Windows application over Discord with audio.
+date: 2019-09-15 23:34:11 +1
+---
+
+import psyduckImage from './psyduckImage.png';
+import fuckWindowsDefenderGif from './fuckWindowsDefender.gif';
+import hunkyDoryImage from './hunkyDory.png';
+import foldersGif from './folders.gif';
+import resolutionImage from './resolution.png';
+
+With obvious exceptions such as Netflix, other HDCP protected content, and some 3D accelerated applications, you can stream most Windows applications with audio to Discord.
+This works by streaming an entirely new desktop inside a Remote Desktop Connection window.
+
+> Warning!
+> This process includes **a violation** of the Windows 10 End User Licence Agreement,
+> and also probably violates the EULAs of Windows 7 and 8.  
+> _(Do not quote me on that, I am not a lawyer. This grey box does not constitute legal advice.)_
+>
+> The author of this article, and The Beacon are not responsible for any legal mishaps between you and Microsoft Corporation
+>
+> This article has not been approved by Microsoft or Discord.
+> Proceed at your own risk.
+
+<img src={psyduckImage} />
+
+## Setting Up
+
+To begin, you will need the following:
+
+- Microsoft Windows 7, 8, 8.1 or 10 Professional (or above)
+    - If you have Home, you can try anyway, but it probably won't work. I haven't tried
+- About 10 minutes of your precious life
+
+## Instructions
+
+1. Download the `RDP Wrapper Library` from the [rdpwrap GitHub page](https://github.com/stascorp/rdpwrap/releases)
+    - Windows will most definitely define the zip as a malicious file.  
+      You need to keep the file anyway in your web browser.  
+      Ask it very nicely to keep your file.
+    - <img src={fuckWindowsDefenderGif} />
+2. Extract the files and run the `install.bat` file as an Administrator.
+3. Open the `RDPConf.exe` file.
+    1. Set the `Authentication Mode` to `GUI Authentication Only`
+    2. Untick the `Single session per user` checkbox.
+    - <img src={hunkyDoryImage} />
+4. Search for `Remote Desktop Connection` in the Start Menu, and type in `127.0.0.2`.  
+   Change the display resolution to one that's reasonable.
+    - <img src={resolutionImage} />
+5. Click connect and make sure everything is working before you continue.
+6. Create an empty folder.
+7. Inside that empty folder, create a folder for your locale.
+    - If your display language is `English (United Kingdom)`, call it `en-GB`
+    - If you're a Canadian, try `en-CA`
+    - If you're not sure what your code is, try this:
+        1. Search for `cmd` in the Start Menu, and start it as an administrator
+        2. Run `bcdedit`, and find the line that reads `locale`
+            - This is your locale code.
+8. Go to `C:\\Windows\\System32\\` and copy `mstsc.exe` to the first empty folder.
+9. Whilst still inside the `System32` folder, find the folder with your locale name, and copy the file inside the folder called `mstsc.exe.mui` to the second empty folder.
+    - Here's one I prepared earlier
+    - <img src={foldersGif} />
+10. Inside the first empty folder, run `mstsc.exe`, and connect to `127.0.0.2`
+11. Go to Discord, and add `127.0.0.2 - Remote Desktop Connection` to your list of games.
+
+Congratulations! You should now be able to stream almost anything into Discord, with audio.
+
+## Questions that I think you may ask
+
+Related to step | Question                                                                       | Answer
+--------------- | ------------------------------------------------------------------------------ | ---------------------------
+1               | Are you trying to hack me? This is a virus!!                                   | I'm not trying to.
+2               | What does this do?                                                             | It allows people to connect to your computer remotely. You are doing it so you can connect to yourself. Remember to reopen `RDPConf.exe` and disable the feature after you are done, and re-enable it when you need it again.
+4               | Why do I have to do this step?                                                 | You can't change the configuration anywhere else easily elsewhere. If you know how to do it easily, please send a GitHub pull request or a message on Discord.
+7               | What about if my language is English (United States)                           | `en-US`
+10              | Wait why am I connecting again with this `mstsc.exe` instead of the first one? | The second one doesn't allow you to change settings (for some reason)
+11              | I'm scared of hackers                                                          | Reopen `RDPConf.exe`, and uncheck the `Enable Remote Desktop` checkbox. You can now rest.
+
+## Tested Applications
+
+Works? | Name                                        | Notes
+------ | ------------------------------------------- | --------------
+Yes    | Google Chrome                               |
+Yes    | Mozilla Firefox                             |
+Yes    | Dolphin Emulator                            | Discord can already stream Dolphin with audio without this hack.
+Yes    | Tabletop Simulator                          |
+Kinda  | Minecraft Windows 10 Edition                | Looking around is impossible.
+No     | Netflix                                     | [You wouldn't steal a handbag. You wouldn't steal a car. You wouldn't steal a baby.](https://www.youtube.com/watch?v=ALZZx1xmAzg)
+No     | Half-Life 2                                 | Half Life 2 does not find a GPU.

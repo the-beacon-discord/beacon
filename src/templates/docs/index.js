@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Layout from '../../components/Layout';
 import Container from '../../components/Container';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -19,7 +19,9 @@ const Documentation = ({
           title={frontmatter.title}
           description={frontmatter.description}
         />
-        <UpFolderButton />
+        <p>
+          <Link to="/docs">Back to Docs</Link>
+        </p>
         <h1>{frontmatter.title}</h1>
         <p><i>{frontmatter.date}</i></p>
         <p>{frontmatter.description}</p>

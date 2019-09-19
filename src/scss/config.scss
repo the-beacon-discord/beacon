@@ -9,10 +9,10 @@ $youtube-colour: red;
 }
 
 @mixin hoverShadow($amount: 1) {
-	box-shadow: $shadow-size $shadow-size 2px rgba(0, 0, 0, 0.8);
+	box-shadow: $shadow-size $shadow-size 2px rgba(0, 0, 0, 0.6);
 	transition: box-shadow 0.1s;
 	&:hover {
-		box-shadow: calc(2px + (#{$amount} * 2px)) calc(2px + (#{$amount} * 2px)) 2px rgba(0, 0, 0, 0.8);
+		box-shadow: calc(2px + (#{$amount} * 2px)) calc(2px + (#{$amount} * 2px)) 2px rgba(0, 0, 0, 0.6);
 	}
 }
 

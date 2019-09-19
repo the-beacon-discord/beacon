@@ -3,8 +3,26 @@ import React, { Component } from 'react';
 import Layout from '../../components/Layout';
 import Container from '../../components/Container';
 
+import styles from './index.module.scss';
+
 class Documentation extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      category: 'all'
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(e) {
+    this.setState({
+      category: e.target.value
+    })
+  }
   render() {
+    const uniqueCategories = [];
+    this.props.data.allMdx.edges.forEach((edge) => {
+      if (edge.node.frontmatter.category && !uniqueCategories.includes(edge.node.frontmatter.category)) uniqueCategories.push(edge.node.frontmatter.category);
+    })
     return (
       <Layout>
         <Container>
@@ -13,51 +31,28 @@ class Documentation extends Component {
             Welcome to The Beacon Wiki!<br />
             Get useful information about the server, and tips on Discord as a whole.
           </p>
-          <ul>
-            <li><Link to="/docs/beacon">Beacon Rules and Roles</Link></li>
-            <li><Link to="/docs/discord">Discord Tips and Tricks</Link></li>
-            <li><Link to="/docs/website">Website Development</Link></li>
-          </ul>
-          <h3>All Docs</h3>
-          <table>
-            <thead>
-              <tr>
-                <td>
-                  Edited
-                </td>
-                <td>
-                  Path
-                </td>
-                <td>
-                  Name
-                </td>
-                <td>
-                  Description
-                </td>
-              </tr>
-            </thead>
-            <tbody>
-              {this.props.data.allMdx.edges.map((edge) => {
+          <select className={styles.select} onChange={this.handleChange}>
+            <option value="all">All Categories</option>
+            {uniqueCategories.map(category => <option key={category} value={category}>{category}</option>)}
+          </select>
+          <div className={styles.gridContainer}>
+            {this.props.data.allMdx.edges
+              .filter(edge => this.state.category === 'all' || this.state.category === edge.node.frontmatter.category)
+              .sort((a, b) => a.node.frontmatter.date - b.node.frontmatter.date)
+              .map((edge) => {
                 const page = edge.node;
                 return (
-                  <tr key={page.fields.slug}>
-                    <td>
-                      {page.frontmatter.date}
-                    </td>
-                    <td>
-                      {page.fields.slug}
-                    </td>
-                    <td>
-                      <Link to={page.fields.slug}>{page.frontmatter.title}</Link>
-                    </td>
-                    <td>
-                      {page.frontmatter.description}
-                    </td>
-                  </tr>
+                  <div className={styles.card} key={page.fields.slug}>
+                    <h3 className={styles.title}>{page.frontmatter.title}</h3>
+                    <p className={styles.description}>{page.frontmatter.description}</p>
+                    <p className={styles.read}>
+                      <Link to={page.fields.slug}>Read &gt;</Link>
+                    </p>
+                  </div>
                 )
-              })}
-            </tbody>
-          </table>
+              })
+            }
+          </div>
         </Container>
       </Layout>
     )
@@ -79,6 +74,7 @@ query documentationList {
         frontmatter {
           title
           description
+          category
           date(formatString: "Do MMMM YYYY")
         }
       }

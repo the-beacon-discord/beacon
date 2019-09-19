@@ -1,0 +1,43 @@
+@import 'config';
+
+.gridContainer {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1em;
+
+	@include onMobile {
+		grid-template-columns: 1fr;	
+	}
+}
+
+.select {
+	background-color: lightgray;
+	border-radius: $border-radius;
+	padding: 1em;
+	margin-bottom: 1em;
+	width: 100%;
+	font-size: 12pt;
+	border-style: none;
+	@include hoverShadow(1);
+}
+
+.card {
+	background-color: lightgrey;
+	border-radius: $border-radius;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	@include hoverShadow(1);
+	.description, .read {
+		margin: 0;
+	}
+	.title {
+		margin-top: 0;
+	}
+	.description {
+		flex-grow: 1;
+	}
+	.read {
+		text-align: right;
+	}
+}

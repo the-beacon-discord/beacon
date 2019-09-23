@@ -25,8 +25,8 @@ class ClockPage extends Component {
 					while (now > then) {
 						then.setDate(then.getDate() + event.repeats)
 					}
-					event.time = then;
 				}
+				event.time = then;
 			}
 
 			this.setState({

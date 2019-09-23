@@ -16,8 +16,21 @@ class ClockPage extends Component {
 	}
 	componentDidMount() {
 		if (window.location.hash.length > 1 && events[window.location.hash.substr(1)]) {
+			const event = events[window.location.hash.substr(1)];
+
+			if (event.time) {
+				const now = new Date();
+				const then = new Date(event.time);
+				if (event.repeats && now > then) {
+					while (now > then) {
+						then.setDate(then.getDate() + event.repeats)
+					}
+					event.time = then;
+				}
+			}
+
 			this.setState({
-				event: events[window.location.hash.substr(1)]
+				event
 			});
 		}
 
@@ -38,14 +51,15 @@ class ClockPage extends Component {
 	}
 	render() {
 		let dateString = '';
+		let then = null;
 
 		if (this.state.event && this.state.event.time) {
 			// https://stackoverflow.com/questions/1787939/check-time-difference-in-javascript
 			const dateStringArray = [];
-			const differenceInMilliseconds = new Date(this.state.event.time) - this.state.timezoneless;
+			const now = this.state.timezoneless;
+			then = this.state.event.time;
+			const differenceInMilliseconds = Math.abs(then - now);
 			const differenceAsADate = new Date(differenceInMilliseconds);
-
-			console.log(differenceInMilliseconds)
 			
 			const days = Math.floor(differenceInMilliseconds / 1000 / 60 / (60 * 24));
 			const hours = differenceAsADate.getHours();
@@ -62,24 +76,38 @@ class ClockPage extends Component {
 			}
 
 			if (minutes) {
-				dateStringArray.push(`${minutes} Minutes${minutes === 1 ? '' : 's'}`);
+				dateStringArray.push(`${minutes} Minute${minutes === 1 ? '' : 's'}`);
 			}
 
 			if (seconds) {
-				dateStringArray.push(`${seconds} Seconds${seconds === 1 ? '' : 's'}`);
+				dateStringArray.push(`${seconds} Second${seconds === 1 ? '' : 's'}`);
 			}
 
 			if (milliseconds) {
 				dateStringArray.push(`${milliseconds.toString().padStart(3, '0')} Milliseconds`);
 			}
 
-			dateString = dateStringArray.join(', ')
+			if (then < now) {
+				dateStringArray.push('in the past')
+			}
+
+			dateString = dateStringArray.join(' ')
 		}
 		
 		return (
 			<Layout>
 				<div className={styles.container}>
 					<h1>{this.state.event && this.state.event.label ? this.state.event.label : 'The Time'}</h1>
+					<h2>{then && then.toLocaleString(window.navigator.language, {
+						weekday: 'long',
+						year: 'numeric',
+						month: 'long',
+						day: 'numeric',
+						hour: '2-digit',
+						minute: '2-digit',
+						second: '2-digit',
+						timeZoneName: 'long'
+					})}</h2>
 					<p className={styles.currentTime}>{this.state.time.toLocaleString()}</p>
 					<h2>{this.state.event && this.state.event.by && `Hosted by: ${this.state.event.by}`}</h2>
 					<p>{dateString}</p>

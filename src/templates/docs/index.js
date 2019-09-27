@@ -1,10 +1,9 @@
-import React from 'react'
-import { graphql, Link } from 'gatsby'
-import Layout from '../../components/Layout';
-import Container from '../../components/Container';
+import { graphql, Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import React from 'react';
+import Container from '../../components/Container';
+import Layout from '../../components/Layout';
 import MdxTableOfContents from '../../components/MdxTableOfContents';
-import UpFolderButton from '../../components/UpFolderButton';
 import SEO from '../../components/SEO';
 
 const Documentation = ({

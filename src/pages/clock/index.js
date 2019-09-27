@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Layout from '../../components/Layout';
-import { clearInterval } from 'timers';
 import events from './events.yaml';
 import styles from './index.module.scss';
 

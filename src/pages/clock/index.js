@@ -8,11 +8,12 @@ class ClockPage extends Component {
 	constructor(props) {
 		super(props);
 
-		this.interval = null;
+		this.load = false;
 		this.state = {
 			time: new Date(),
 			event: null
 		}
+		this.interval = this.interval.bind(this);
 	}
 	componentDidMount() {
 		if (window.location.hash.length > 1 && events[window.location.hash.substr(1)]) {
@@ -34,20 +35,25 @@ class ClockPage extends Component {
 			});
 		}
 
-		this.interval = setInterval(() => {
-			const time = new Date();
-			const timezoneless = new Date();
+		this.load = true;
+		requestAnimationFrame(this.interval);
+	}
+	interval() {
+		if (this.load === false) return;
+		const time = new Date();
+		const timezoneless = new Date();
 
-			timezoneless.setTime(timezoneless.getTime() - timezoneless.getTimezoneOffset() * 60 * 1000)
+		timezoneless.setTime(timezoneless.getTime() - timezoneless.getTimezoneOffset() * 60 * 1000)
 
-			this.setState({
-				time,
-				timezoneless
-			});
-		}, 10);
+		this.setState({
+			time,
+			timezoneless
+		});
+
+		requestAnimationFrame(this.interval);
 	}
 	componentWillUnmount() {
-		if (this.interval) clearInterval(this.interval)
+		this.load = false;
 	}
 	render() {
 		let dateString = '';
@@ -83,9 +89,8 @@ class ClockPage extends Component {
 				dateStringArray.push(`${seconds} Second${seconds === 1 ? '' : 's'}`);
 			}
 
-			if (milliseconds) {
-				dateStringArray.push(`${milliseconds.toString().padStart(3, '0')} Milliseconds`);
-			}
+			dateStringArray.push(milliseconds.toString().padStart(3, '0'));
+			dateStringArray.push('Milliseconds')
 
 			if (then < now) {
 				dateStringArray.push('in the past')

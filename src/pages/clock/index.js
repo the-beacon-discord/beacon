@@ -115,7 +115,7 @@ class ClockPage extends Component {
 					})}</h2>
 					<p className={styles.currentTime}>{this.state.time.toLocaleString()}</p>
 					<h2>{this.state.event && this.state.event.by && `Hosted by: ${this.state.event.by}`}</h2>
-					<p>{dateString}</p>
+					{dateString && <h1>{dateString}</h1>}
 				</div>
 			</Layout>
 		)

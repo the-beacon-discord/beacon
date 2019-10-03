@@ -8,3 +8,8 @@ the-end-of-the-world:
   label: The end of the world as we know it
   by: The Mayan Calendar
   repeats: null
+destiny-raid:
+  time: 2019-10-03 20:00:00 +0
+  label: Destiny Raid
+  by: The Beacon
+  repeats: null

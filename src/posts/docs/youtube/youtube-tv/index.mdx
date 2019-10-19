@@ -1,0 +1,45 @@
+---
+title: Accessing YouTube's Leanback TV Interface
+description: Access the YouTube Leanback TV interface and access features not found on regular YouTube
+category: YouTube
+date: 2019-10-19 02:39:59 +1
+---
+
+import disappointing from './disappointing.png';
+import chromium from './chromium.gif';
+import firefox from './firefox.gif';
+
+When accessing the YouTube TV interface, you may encounter this error message:
+<img src={disappointing} />
+
+This is a user agent based restriction, and can be circumvented by changing your browser's user agent to a television.
+
+> This is the User-Agent that you need later (or at least the part that matters).
+> Copy all of it (including `;`) for now.
+>
+> `; Tizen 2.4`
+
+# Setup
+To trick the YouTube app into thinking you're just a Samsung Smart TV, the user agent needs to be changed in your browser.
+
+## Mozilla Firefox
+<img src={firefox} />
+
+1. Press **CTRL+SHIFT+I**
+	- You could also try opening the browser menu and going through: **Web Developer** > **Toggle Tools**
+2. On the top right of the developer tools, click on the "mobile and tablet" icon, left of the dots, and close the developer tools.
+3. On the top right of the window, click on the cog and enable **Show user agent**
+4. On the top of the window, replace the contents of the UA text box with that you copied.
+	- Press **Enter** to confirm and lock in the new user agent.
+5. Navigate to https://youtube.com/TV
+6. On the top right of the window, click on the X to close the "Responsive Design Mode"
+
+## Google Chrome
+<img src={chromium} />
+
+1. Press **CTRL+SHIFT+I**
+	- You could also try opening the browser menu and going through: **More Tools** > **Developer Tools**
+2. On the top right of the developer tools, click on the dots, and enter **More Tools** > **Network Conditions**
+3. Untick **Select Automatically** and paste in the user agent that you copied.
+4. Navigate to https://youtube.com/TV
+5. Close developer tools, by clicking on the `X` on the top right of the developer tools.

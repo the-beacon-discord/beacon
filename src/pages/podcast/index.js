@@ -9,11 +9,13 @@ class Podcast extends Component {
       <Layout>
         <Container>
           <h1>The Signal</h1>
+          <iframe src="https://open.spotify.com/embed-podcast/show/1FXgwfkfQUVDw0E9eKtUKj" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <h2>All Episodes</h2>
           <table>
             <thead>
               <tr>
                 <td>
-                  Date
+                  Episode
                 </td>
                 <td>
                   Name
@@ -29,7 +31,7 @@ class Podcast extends Component {
                 return (
                   <tr key={page.fields.slug}>
                     <td>
-                      {page.frontmatter.date}
+                      {page.frontmatter.episode}
                     </td>
                     <td>
                       <Link to={page.fields.slug}>{page.frontmatter.title}</Link>
@@ -63,7 +65,7 @@ query podcastList {
         frontmatter {
           title
           description
-          date(formatString: "Do MMMM YYYY")
+          episode
           explicit
         }
       }

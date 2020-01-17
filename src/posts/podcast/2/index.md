@@ -6,4 +6,5 @@ explicit: true
 youtube: saYhzSQuXrk
 season: 2
 episode: 2
+mp3File: ./podcast.mp3
 ---

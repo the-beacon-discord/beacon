@@ -65,7 +65,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  return graphql(`
+  const makePage = graphql(`
     {
       allMdx(
         sort: { order: DESC, fields: [frontmatter___date] }
@@ -100,11 +100,9 @@ exports.createPages = ({ actions, graphql, reporter }) => {
 			})
 
 			return;
-		})
-}
+    })
 
-exports.onPostBuild = ({ graphql }) => {
-	return graphql(`
+    const makePodcast = graphql(`
 		{
 			site {
 				siteMetadata {
@@ -124,12 +122,12 @@ exports.onPostBuild = ({ graphql }) => {
 			}
 			allMdx(
 				sort: { order: DESC, fields: [frontmatter___date] }
-				limit: 1000
+        limit: 1000
+        filter: { fields: { template: { eq: "podcast"}}}
 			) {
 				edges {
 					node {
 						fields {
-							template
 							slug
 						}
 						frontmatter {
@@ -138,7 +136,11 @@ exports.onPostBuild = ({ graphql }) => {
 							date
 							explicit
 							season
-							episode
+              episode
+              mp3File {
+                absolutePath
+                publicURL
+              }
 						}
 					}
 				}
@@ -146,7 +148,7 @@ exports.onPostBuild = ({ graphql }) => {
 		}
 	`)
 		.then((result) => {
-			const podcastMetadata = result.data.site.siteMetadata.podcast;
+      const podcastMetadata = result.data.site.siteMetadata.podcast;
 
 			const output = {
 				_declaration: {
@@ -187,7 +189,7 @@ exports.onPostBuild = ({ graphql }) => {
 							_text: podcastMetadata.language
 						},
 						generator: {
-							_text: 'Katielabs Shit XML Machine - https://github.com/the-beacon-discord/beacon'
+							_text: 'Katielabs Shit XML Machine Version 2020-01-17 - https://github.com/the-beacon-discord/beacon'
 						},
 						copyright: {
 							_text: podcastMetadata.copyright
@@ -232,16 +234,9 @@ exports.onPostBuild = ({ graphql }) => {
 							}
 						],
 						item: result.data.allMdx.edges
-							.filter(({ node }) => node.fields.template === 'podcast')
 							.map(({ node }) => {
 								// Open the podcast.mp3 file
 								const podcastFile = fs.readFileSync(path.resolve(__dirname, 'src', 'posts', ...node.fields.slug.split(/[\\/]/), 'podcast.mp3'))
-
-								// Copy the podcast.mp3 file to the correct destination
-								fs.writeFileSync(
-									path.resolve(__dirname, 'public', ...node.fields.slug.split(/[\\/]/), 'podcast.mp3'),
-									podcastFile
-								)
 
 								// Get the duration of the podcast
 								const duration = formatMilliseconds(getMP3Duration(podcastFile));
@@ -255,7 +250,7 @@ exports.onPostBuild = ({ graphql }) => {
 									},
 									enclosure: {
 										_attributes: {
-											url: `${result.data.site.siteMetadata.siteUrl}${node.fields.slug}podcast.mp3`,
+											url: `${result.data.site.siteMetadata.siteUrl}${node.frontmatter.mp3File.publicURL}`,
 											type: 'audio/mpeg',
 											length: podcastFile.byteLength
 										}
@@ -302,4 +297,6 @@ exports.onPostBuild = ({ graphql }) => {
 			}) + '\n';
 			fs.writeFileSync(path.resolve(__dirname, 'public', 'rss.xml'), xml)
 		})
+    
+    return Promise.all([makePage, makePodcast])
 }

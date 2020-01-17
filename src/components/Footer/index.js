@@ -32,7 +32,7 @@ class Footer extends Component {
         </Container>
         <div className={styles.copyright}>
           <Container>
-            <p className={styles.copyrightText}><i>Copyright The Beacon 2017 - 2019</i></p>
+            <p className={styles.copyrightText}><i>Copyright The Beacon 2017 - 2020</i></p>
           </Container>
         </div>
       </footer>

@@ -9,11 +9,11 @@ const websiteMetadata = {
   youtube: 'https://www.youtube.com/channel/UCFW1hIgpFxsfzM2GxMyIaiw',
   podcast: {
     title: 'The Signal',
-    description: 'Watch as LOONA stans discuss about what has been happening in their daily lives.',
+    description: 'It\'s a bird! No, It\'s a plane! Oh wait it\'s just a lousy bunch of gamers talking about...Games? Music? What\'s this....a cat? Could this be a sign...no wait it\'s The Signal! A podcast that\'s just like any other but BETTER! Why? Because we are self aware AF.',
     author: 'The Beacon',
     language: 'en-GB',
     siteUrl: 'https://thebeacon.netlify.com',
-    subtitle: 'LOONA stans doing absolutely nothing',
+    subtitle: 'Our unknown exploration into anything that comes across our server.',
     explicit: 'yes', // Allowed values: `yes` or `clean`
     email: 'beacondiscord@gmail.com',
     copyright: 'The Beacon'

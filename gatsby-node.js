@@ -236,7 +236,7 @@ exports.createPages = ({ actions, graphql, reporter }) => {
 						item: result.data.allMdx.edges
 							.map(({ node }) => {
 								// Open the podcast.mp3 file
-								const podcastFile = fs.readFileSync(path.resolve(__dirname, 'src', 'posts', ...node.fields.slug.split(/[\\/]/), 'podcast.mp3'))
+								const podcastFile = fs.readFileSync(node.frontmatter.mp3File.absolutePath)
 
 								// Get the duration of the podcast
 								const duration = formatMilliseconds(getMP3Duration(podcastFile));

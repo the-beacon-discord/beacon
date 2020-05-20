@@ -85,10 +85,12 @@ class SecondPage extends Component {
       <Layout>
         <SEO
           title="loonathewheel"
-          description="Test your luck to see if you will be killed by LOONA's Chuu."
+          description="Test your luck to see if you will be killed by Chuu of LOONA."
         />
         <Container>
-          <h1>Spin the wheels!</h1>
+          <h1>loonathewheel</h1>
+          <p>This is a test page in The Beacon website.</p>
+          <h2>Spin the wheels!</h2>
           <button onClick={this.spin} disabled={this.state.spinning}>Spin</button>
           <p>
             { this.state.message }

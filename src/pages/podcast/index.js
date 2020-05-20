@@ -30,8 +30,9 @@ class Podcast extends Component {
                 const page = edge.node;
                 return (
                   <tr key={page.fields.slug}>
-                    <td>
+                    <td style={{whiteSpace: 'nowrap'}}>
                       {page.frontmatter.episode}
+                      {page.frontmatter.episodeType === 'bonus' && ' (Bonus)'}
                     </td>
                     <td>
                       <Link to={page.fields.slug}>{page.frontmatter.title}</Link>
@@ -66,6 +67,7 @@ query podcastList {
           title
           description
           episode
+          episodeType
           explicit
         }
       }

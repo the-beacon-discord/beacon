@@ -20,5 +20,6 @@ These include, and are not limited to:
 - `/src/posts/podcast/6/podcast.mp3`
 - `/src/posts/podcast/7/episode 7_mixdown1.mp3`
 - `/src/posts/podcast/8/8.mp3`
+- `/src/posts/podcast/8-bonus/Episode 8.5_mixdown12.mp3`
 
 These files are not licenced under the MIT licence.

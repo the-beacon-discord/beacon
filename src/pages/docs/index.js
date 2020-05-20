@@ -37,6 +37,7 @@ class Documentation extends Component {
           </select>
           <div className={styles.gridContainer}>
             {this.props.data.allMdx.edges
+              .filter(edge => !edge.node.frontmatter.hidden)
               .filter(edge => this.state.category === 'all' || this.state.category === edge.node.frontmatter.category)
               .sort((a, b) => a.node.frontmatter.date - b.node.frontmatter.date)
               .map((edge) => {
@@ -75,6 +76,7 @@ query documentationList {
           title
           description
           category
+          hidden
           date(formatString: "Do MMMM YYYY")
         }
       }

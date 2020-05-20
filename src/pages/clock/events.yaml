@@ -13,3 +13,8 @@ destiny-raid:
   label: Destiny Raid
   by: The Beacon
   repeats: null
+beacon-prom:
+  time: 2020-04-25 21:00:00 +0
+  label: The Beacon Minecraft Prom
+  by: The Beacon
+  repeats: null

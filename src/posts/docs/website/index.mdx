@@ -2,7 +2,8 @@
 title: Developing The Beacon Website
 description: A set of tutorials on how to set up your computer to develop for The Beacon website.
 category: The Beacon
-date: 2019-09-04 02:19:30 +1
+created: 2019-09-04 02:19:30 +1
+edited: 2020-05-20 18:17:40 +1
 ---
 
 ## Tutorials
@@ -59,17 +60,21 @@ It should be the first option in the list
 3. You should now be able to see the homepage.
 
 ### Adding a podcast
+
 1. In the `/src/posts/podcast` folder, create a new folder with the episode number
-2. Create an `index.mdx` file in the folder, and add something resembling this:
+2. Copy the Podcast MP3 file into the folder. Copy the filename (with the extension)
+3. Create an `index.mdx` file in the folder, and add something resembling this:
     ```markdown
     ---
     title: MitchiriNeko March
     description: "Mitchiri-Neko" is a cat-like creature. They crowd closely together always everywhere (=´ω｀=)
-    date: 2019-08-16 23:19:53 +1
+    created: 2020-05-20 14:51:44+01
     explicit: true
     youtube: lAIGb1lfpBw
-    season: 1
-    episode: 23
+    season: 2
+    episode: 8
+    episodeType: bonus
+    mp3File: ./replaceTextWithFilenameFromStep2.mp3
     ---
 
     Whatever you want the webpage to show here.
@@ -78,9 +83,13 @@ It should be the first option in the list
     Get some help with Markdown here:
     https://guides.github.com/features/mastering-markdown/
     ```
-    - Under NO circumstances should you put the episode number in the title.
-        - In the Fair and Democratic People's Republic of The Beacon, this is punishable by infinite pings.
-3. Copy an MP3 file into the folder, and rename it as `podcast.mp3`
+    - Please read the Spotify Podcast Delivery Specification for help:
+        - https://podcasters.spotify.com/terms/Spotify_Podcast_Delivery_Specification_v1.6.pdf
+    - Please read the Apple iTunes "A podcaster's guide to RSS" for help:
+        - https://help.apple.com/itc/podcasts_connect/#/itcb54353390
+    - Episode Type must be of type `full` or `bonus`.
+    - Episode number must be a positive integer. Episode 8.5 is banned.
+    - **Under NO circumstances should you put the episode number in the title.**
 4. Open _Microsoft Visual Studio Code_
 5. In the bar at the bottom, click the "sync" button in the bottom left.
     - This synchronises your folder with the one stored on GitHub.

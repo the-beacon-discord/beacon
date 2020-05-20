@@ -39,7 +39,7 @@ class Documentation extends Component {
             {this.props.data.allMdx.edges
               .filter(edge => !edge.node.frontmatter.hidden)
               .filter(edge => this.state.category === 'all' || this.state.category === edge.node.frontmatter.category)
-              .sort((a, b) => a.node.frontmatter.date - b.node.frontmatter.date)
+              .sort((a, b) => a.node.frontmatter.created - b.node.frontmatter.created)
               .map((edge) => {
                 const page = edge.node;
                 return (
@@ -64,7 +64,7 @@ export const query = graphql`
 query documentationList {
   allMdx(
     filter:{fields:{template:{eq: "docs"}}}
-    sort: { order: DESC, fields: [frontmatter___date] }
+    sort: { order: DESC, fields: [frontmatter___created] }
   ) {
     edges {
       node {
@@ -77,7 +77,7 @@ query documentationList {
           description
           category
           hidden
-          date(formatString: "Do MMMM YYYY")
+          created(formatString: "Do MMMM YYYY")
         }
       }
     }

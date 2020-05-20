@@ -1,7 +1,7 @@
 ---
 title: New Website
 description: The Beacon gets a website.
-date: 2019-08-16 18:37:32 +1
+created: 2019-08-16 18:37:32 +1
 ---
 
 Someone spent their time making a test React website.

@@ -29,7 +29,7 @@ class News extends Component {
                 return (
                   <tr key={page.fields.slug}>
                     <td>
-                      {page.frontmatter.date}
+                      {page.frontmatter.created}
                     </td>
                     <td>
                       <Link to={page.fields.slug}>{page.frontmatter.title}</Link>
@@ -52,7 +52,7 @@ export const query = graphql`
 query newsList {
   allMdx(
     filter:{fields:{template:{eq: "news"}}}
-    sort: { order: DESC, fields: [frontmatter___date] }
+    sort: { order: DESC, fields: [frontmatter___created] }
   ) {
     edges {
       node {
@@ -63,7 +63,7 @@ query newsList {
         frontmatter {
           title
           description
-          date(formatString: "Do MMMM YYYY")
+          created(formatString: "Do MMMM YYYY")
         }
       }
     }

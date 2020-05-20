@@ -19,7 +19,7 @@ export default function Template({
       <Container>
         <h1>{frontmatter.title}</h1>
         <h2>{frontmatter.description}</h2>
-        <p><i>{frontmatter.date}</i></p>
+        <p><i>{frontmatter.created}</i></p>
         <MDXRenderer>{body}</MDXRenderer>
       </Container>
     </Layout>
@@ -32,7 +32,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
-        date(formatString: "Do MMMM YYYY")
+        created(formatString: "Do MMMM YYYY")
       }
     }
   }

@@ -22,7 +22,8 @@ const Documentation = ({
           <Link to="/docs">Back to Docs</Link>
         </p>
         <h1>{frontmatter.title}</h1>
-        <p><i>{frontmatter.date}</i></p>
+        {frontmatter.created && <p><i>Created {frontmatter.created}</i></p>}
+        {frontmatter.edited && <p><i>Last Edited {frontmatter.edited}</i></p>}
         <p>{frontmatter.description}</p>
         {headings.length > 1 &&
           <MdxTableOfContents headings={headings} />
@@ -44,7 +45,8 @@ query($slug: String!) {
     frontmatter {
       title
       description
-      date(formatString: "Do MMMM YYYY")
+      created(formatString: "Do MMMM YYYY")
+      edited(formatString: "Do MMMM YYYY")
     }
   }
 }

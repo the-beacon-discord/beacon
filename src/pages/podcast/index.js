@@ -55,7 +55,7 @@ export const query = graphql`
 query podcastList {
   allMdx(
     filter:{fields:{template:{eq: "podcast"}}}
-    sort: { order: DESC, fields: [frontmatter___date] }
+    sort: { order: DESC, fields: [frontmatter___created] }
   ) {
     edges {
       node {

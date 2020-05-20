@@ -20,7 +20,7 @@ export default function Template({
       <Container>
         <h1><Link to="/podcast">The Signal</Link> - {frontmatter.title}</h1>
         <h2>{frontmatter.description}</h2>
-        <p><i>{frontmatter.date}</i></p>
+        <p><i>{frontmatter.created}</i></p>
         {frontmatter.youtube && <YouTube id={frontmatter.youtube} />}
         <noscript>
           <audio controls>
@@ -42,7 +42,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
-        date(formatString: "Do MMMM YYYY")
+        created(formatString: "Do MMMM YYYY")
         youtube
       }
     }

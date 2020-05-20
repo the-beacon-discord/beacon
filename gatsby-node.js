@@ -68,7 +68,7 @@ exports.createPages = ({ actions, graphql, reporter }) => {
   const makePage = graphql(`
     {
       allMdx(
-        sort: { order: DESC, fields: [frontmatter___date] }
+        sort: { order: DESC, fields: [frontmatter___created] }
         limit: 1000
       ) {
         edges {
@@ -121,7 +121,7 @@ exports.createPages = ({ actions, graphql, reporter }) => {
 				}
 			}
 			allMdx(
-				sort: { order: DESC, fields: [frontmatter___date] }
+				sort: { order: DESC, fields: [frontmatter___created] }
         limit: 1000
         filter: { fields: { template: { eq: "podcast"}}}
 			) {
@@ -133,7 +133,7 @@ exports.createPages = ({ actions, graphql, reporter }) => {
 						frontmatter {
 							title
 							description
-							date
+							created
 							explicit
 							season
               episode

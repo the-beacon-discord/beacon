@@ -6,5 +6,6 @@ explicit: true
 youtube: xC__JAkIj94
 season: 2
 episode: 1
+episodeType: full
 mp3File: ./podcast.mp3
 ---

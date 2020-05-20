@@ -137,6 +137,7 @@ exports.createPages = ({ actions, graphql, reporter }) => {
 							explicit
 							season
               episode
+              episodeType
               mp3File {
                 absolutePath
                 publicURL
@@ -189,7 +190,7 @@ exports.createPages = ({ actions, graphql, reporter }) => {
 							_text: podcastMetadata.language
 						},
 						generator: {
-							_text: 'Katielabs Shit XML Machine Version 2020-01-17 - https://github.com/the-beacon-discord/beacon'
+							_text: 'The Beacon Website (/gatsby-node.js) - https://github.com/the-beacon-discord/beacon'
 						},
 						copyright: {
 							_text: podcastMetadata.copyright
@@ -275,7 +276,10 @@ exports.createPages = ({ actions, graphql, reporter }) => {
 									},
 									'itunes:episode': {
 										_text: node.frontmatter.episode
-									},
+                  },
+                  'itunes:episodeType': {
+                    _text: node.frontmatter?.episodeType || 'full'
+                  },
 									'itunes:duration': {
 										_text: duration
 									},
@@ -283,7 +287,7 @@ exports.createPages = ({ actions, graphql, reporter }) => {
 										_text: node.frontmatter.description
 									},
 									'itunes:explicit': {
-										_text: node.frontmatter.explicit ? 'yes' : 'no'
+										_text: node.frontmatter?.explicit ? 'yes' : 'no'
 									}
 								};
 							})

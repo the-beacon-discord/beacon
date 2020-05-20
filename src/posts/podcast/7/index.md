@@ -10,5 +10,6 @@ explicit: true
 youtube: qtP3fZiwqwc
 season: 2
 episode: 7
+episodeType: full
 mp3File: ./episode 7_mixdown1.mp3
 ---

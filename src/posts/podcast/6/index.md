@@ -6,5 +6,6 @@ explicit: true
 youtube: KIEseQS7JhI
 season: 2
 episode: 6
+episodeType: full
 mp3File: ./podcast.mp3
 ---

@@ -8,5 +8,6 @@ explicit: true
 youtube: 88SchtAl9hw
 season: 2
 episode: 5
+episodeType: full
 mp3File: ./podcast.mp3
 ---

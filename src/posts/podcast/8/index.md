@@ -7,5 +7,6 @@ explicit: true
 youtube: IAhhRBw-nSQ
 season: 2
 episode: 8
+episodeType: full
 mp3File: ./8.mp3
 ---

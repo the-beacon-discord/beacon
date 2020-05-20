@@ -1,8 +1,7 @@
 ---
-title: The Effect of Coronavirus
+title: Still Locked In
 description: |
-  COVID-19 hasn't stopped, even with our Thursday claps and our coloured NHS rainbows.
-  Grab a roll of toilet paper, and join our exploration into the lives of people living in a locked down world.
+  Looks like all we're able to do now is sit and talk about our lives stuck in isolation.
 created: 2020-05-20 14:51:44+01
 explicit: true
 youtube: null

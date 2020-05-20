@@ -26,9 +26,7 @@ class IndexPage extends Component {
       .then(res => res.json())
       .then((data) => {
         this.setState({
-          members: data.members
-            .filter(member => !member.bot)
-            .length,
+          members: data.presence_count,
           invite: data.instant_invite
         })
       })

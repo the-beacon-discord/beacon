@@ -7,7 +7,7 @@ import 'prismjs/components/prism-lua'
 import 'prismjs/components/prism-markdown'
 
 export default ({ children, className }) => {
-	const language = className.replace(/language-/, '')
+	const language = className?.replace(/language-/, '')
 
   return (
     <Highlight {...defaultProps} code={children} language={language} Prism={Prism}>

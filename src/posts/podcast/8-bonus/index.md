@@ -1,5 +1,5 @@
 ---
-title: Still Locked In
+title: Social Distancing
 description: |
   Looks like all we're able to do now is sit and talk about our lives stuck in isolation.
 created: 2020-05-20 14:51:44+01

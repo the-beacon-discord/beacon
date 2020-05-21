@@ -257,7 +257,7 @@ exports.createPages = ({ actions, graphql, reporter }) => {
 										}
 									},
 									pubDate: {
-										_text: (new Date(node.frontmatter.date)).toUTCString()
+										_text: (new Date(node.frontmatter.created)).toUTCString()
 									},
 									title: {
 										_text: node.frontmatter.title
